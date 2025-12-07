@@ -66,25 +66,25 @@ public class OpenAIConfig {
                 .build();
     }
 
-    /**
-     * 调用 openAI
-     * @param openAiChatModel
-     * @return
-     */
-    @Bean
-    public ChatClient.Builder chatClientBuilder(OpenAiChatModel openAiChatModel) {
-        // 构建 ChatClient.Builder：用于集成 MCP 工具并进行对话调用
-        return new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
-    }
-
+//    /**
+//     * 调用 openAI
+//     * @param openAiChatModel
+//     * @return
+//     */
 //    @Bean
-//    public ChatClient chatClient(OpenAiChatModel openAiChatModel, ToolCallbackProvider tools) {
-//        DefaultChatClientBuilder defaultChatClientBuilder = new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
-//        return defaultChatClientBuilder
-//                .defaultTools(tools)
-//                .defaultOptions(OpenAiChatOptions.builder()
-//                        .model("gpt-4o")
-//                        .build())
-//                .build();
+//    public ChatClient.Builder chatClientBuilder(OpenAiChatModel openAiChatModel) {
+//        // 构建 ChatClient.Builder：用于集成 MCP 工具并进行对话调用
+//        return new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
 //    }
+
+    @Bean
+    public ChatClient chatClient(OpenAiChatModel openAiChatModel, ToolCallbackProvider tools) {
+        DefaultChatClientBuilder defaultChatClientBuilder = new DefaultChatClientBuilder(openAiChatModel, ObservationRegistry.NOOP, (ChatClientObservationConvention) null);
+        return defaultChatClientBuilder
+                .defaultTools(tools)
+                .defaultOptions(OpenAiChatOptions.builder()
+                        .model("gpt-4o")
+                        .build())
+                .build();
+    }
 }

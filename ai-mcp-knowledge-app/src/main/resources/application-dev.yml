@@ -2,8 +2,8 @@ server:
   port: 8090
 
 spring:
-  main:
-    web-application-type: none
+#  main:
+#    web-application-type: none
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
@@ -14,7 +14,7 @@ spring:
     mcp:
       client:
         stdio:
-          servers-configuration: classpath:/config/mcp-servers-config.json
+          servers-configuration: classpath:/config/mcp-servers-config-3.json
     openai:
       base-url: https://apis.itedus.cn
       api-key: sk-J4IV8mZZsLfRmfEh149155448eE644179871E3E5BaEfF476
