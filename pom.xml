@@ -11,7 +11,6 @@
     <modules>
         <module>ai-mcp-knowledge-app</module>
         <module>ai-mcp-knowledge-trigger</module>
-        <module>ai-mcp-knowledge-trigger</module>
     </modules>
 
     <properties>
