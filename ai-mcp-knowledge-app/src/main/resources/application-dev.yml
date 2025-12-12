@@ -17,7 +17,7 @@ spring:
           servers-configuration: classpath:/config/mcp-servers-config-3.json
     openai:
       base-url: https://apis.itedus.cn
-      api-key: sk-J4IV8mZZsLfRmfEh149155448eE644179871E3E5BaEfF476
+      api-key: sk-ZUSoPaYFZWvBnHo388E59c24D06449EfB34a9aDd7972Ac3b
       chat:
         options:
           model: gpt-4o
